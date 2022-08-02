@@ -16,6 +16,15 @@ secret_key = "xxxxxxxxxxxxxxxxxxxxxxxxxxxx"
 region = "us-west-2"
 }
 
+#EC2
+module "ec2" {
+    source = "./modules/ec2"
+    ami_id = "ami-081c75eaeac28ac34"
+    instance_type = "t2.micro"
+    availability_zone = "us-east-2a"
+    key_name = "key-tf-pracx"
+  
+}
 
 # VPC Network Setup
 resource "aws_vpc" "custom_vpc" {
